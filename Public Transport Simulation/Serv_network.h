@@ -12,4 +12,3 @@ private:
 	int m_stops = 0;
 	int m_graph[10][10] = { 0 };
 };
-

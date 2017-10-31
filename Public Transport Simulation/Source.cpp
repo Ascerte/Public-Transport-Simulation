@@ -2,6 +2,8 @@
 #include"Serv_network.h"
 #include<cstdlib>
 #include<time.h>
+#include"Person.h"
+#include<string>
 
 int main()
 {
