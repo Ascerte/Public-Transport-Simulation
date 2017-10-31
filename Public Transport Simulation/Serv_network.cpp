@@ -36,7 +36,7 @@ void Serv_network::makeGraph()
 	int arcno(getRandom(15, 4));
 
 	int index = 0;
-	for (it = arcs.begin(); /*it != arcs.end()*/ index < arcno; it++, index++)
+	for (it = arcs.begin(); index < arcno; it++, index++)
 		m_graph[(it->first)][(it->second)] = getRandom(10, 0);
 		
 }
