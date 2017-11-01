@@ -31,7 +31,7 @@ void Serv_network::makeGraph()
 	std::vector<std::pair<int, int>>::iterator it = arcs.begin();
 
 	std::random_shuffle(arcs.begin(), arcs.end());
-	//test
+
 	int arcno(getRandom(4, 15));
 
 	int index = 0;
