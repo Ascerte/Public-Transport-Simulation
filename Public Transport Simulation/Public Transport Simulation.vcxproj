@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Serv_network.h" />
   </ItemGroup>

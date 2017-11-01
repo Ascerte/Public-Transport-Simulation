@@ -1,10 +1,9 @@
 #include"functions.h"
-#include<cstdlib>
-int getRandom(int max, int min)
+#include<random>
+#include<time.h>
+#include"globals.h"
+int getRandom(int min, int max)
 {
-	int range;
-	int num;
-	range = max - min + 1;
-	num = rand() % range + min;
-	return num;
+	std::uniform_int_distribution<int> dis(min, max);
+	return dis(seed);
 }

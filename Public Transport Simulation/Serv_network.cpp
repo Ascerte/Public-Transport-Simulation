@@ -1,11 +1,10 @@
 #include "Serv_network.h"
-#include<cstdlib>
-#include<time.h>
 #include"functions.h"
 #include<iostream>
 #include<utility>
 #include<vector>
 #include<algorithm>
+
 Serv_network::Serv_network(int stops)
 	: m_stops(stops)
 {
@@ -32,12 +31,12 @@ void Serv_network::makeGraph()
 	std::vector<std::pair<int, int>>::iterator it = arcs.begin();
 
 	std::random_shuffle(arcs.begin(), arcs.end());
-
-	int arcno(getRandom(15, 4));
+	
+	int arcno(getRandom(4, 15));
 
 	int index = 0;
 	for (it = arcs.begin(); index < arcno; it++, index++)
-		m_graph[(it->first)][(it->second)] = getRandom(10, 0);
+		m_graph[(it->first)][(it->second)] = getRandom(0, 10);
 		
 }
 
