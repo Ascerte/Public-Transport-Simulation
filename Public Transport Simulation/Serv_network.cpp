@@ -23,7 +23,7 @@ Serv_network::~Serv_network()
 void Serv_network::makeGraph()
 {
 	std::vector<std::pair<int, int>> arcs;
-	
+
 	for (int i = 0; i < m_stops; i++)
 		for (int j = 0; j < m_stops; j++)
 			arcs.push_back(std::make_pair(i, j));
@@ -36,7 +36,7 @@ void Serv_network::makeGraph()
 
 	int index = 0;
 	for (it = arcs.begin(); index < arcno; it++, index++)
-		m_graph[(it->first)][(it->second)] = getRandom(0, 10);
+		m_graph[(it->first)][(it->second)] = getRandom(1, 10);
 		
 }
 

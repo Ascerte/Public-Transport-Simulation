@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include"Serv_network.h"
-//#include<cstdlib>
 #include<time.h>
 #include"Person.h"
 #include<string>
@@ -27,17 +26,18 @@ void printLine(std::ofstream &f, int &h, int &m, int &s)
 int main()
 {
 	Serv_network test(5);
-	//test.printGraph();
+	test.printGraph();
 	std::ofstream f("test.txt");
 	int tick = 0;
 	for (int h = 0; h < 2; h++)
 		for (int m = 0; m < 60; m++)
 			for (int s = 0; s < 60; s++)
 			{
-				if (m == 30)
 					printLine(f, h, m, s);
 				tick++;
 			}
 	f << tick;
 	system("pause");
+	
+	
 }
