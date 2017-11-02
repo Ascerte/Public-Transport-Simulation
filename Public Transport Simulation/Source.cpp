@@ -37,6 +37,7 @@ int main()
 				tick++;
 			}
 	f << tick;
+	//test
 	system("pause");
 	
 	
