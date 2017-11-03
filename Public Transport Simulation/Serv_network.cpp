@@ -15,10 +15,10 @@ Serv_network::~Serv_network()
 {
 }
 
-/*int& Serv_network::operator()(const int &index1, const int &index2)
+int& Serv_network::operator()(const int &index1, const int &index2)
 {
 	return m_graph[index1][index2];
-}*/
+}
 
 void Serv_network::makeGraph()
 {

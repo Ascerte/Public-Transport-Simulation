@@ -6,6 +6,7 @@
 #include<string>
 #include<random>
 #include"functions.h"
+#include"Bus.h"
 
 void printLine(std::ofstream &f, int &h, int &m, int &s)
 {
@@ -27,9 +28,12 @@ int main()
 {
 	Serv_network test(5);
 	test.printGraph();
-	std::ofstream f("test.txt");
-	int tick = 0;
-	for (int h = 0; h < 2; h++)
+	std::cout << "\n";
+	Bus bus;
+	bus.createCourse(test);
+	//std::ofstream f("test.txt");
+	//int tick = 0;
+	/*for (int h = 0; h < 2; h++)
 		for (int m = 0; m < 60; m++)
 			for (int s = 0; s < 60; s++)
 			{
@@ -37,7 +41,7 @@ int main()
 				tick++;
 			}
 	f << tick;
-	//test
+	//test*/
 	system("pause");
 	
 	
