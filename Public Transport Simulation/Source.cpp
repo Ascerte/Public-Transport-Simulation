@@ -7,6 +7,7 @@
 #include<random>
 #include"functions.h"
 #include"Bus.h"
+#include<vector>
 
 void printLine(std::ofstream &f, int &h, int &m, int &s)
 {
@@ -30,18 +31,22 @@ int main()
 	test.printGraph();
 	std::cout << "\n";
 	Bus bus;
-	bus.createCourse(test);
 	//std::ofstream f("test.txt");
-	//int tick = 0;
-	/*for (int h = 0; h < 2; h++)
-		for (int m = 0; m < 60; m++)
-			for (int s = 0; s < 60; s++)
-			{
-					printLine(f, h, m, s);
-				tick++;
-			}
-	f << tick;
-	//test*/
+	int tick = 0;
+	int nr_buses(getRandom(1, 5));
+
+	std::vector<Bus> Buses;
+	std::vector<Bus>::iterator Buses it = Buses.begin();
+	for (int i = 0; i < nr_buses; i++)
+		Buses.push_back(Bus());
+
+	while (tick < 7200)
+	{
+		for( it; it != Buses.end(); it++)
+		{
+			if()
+		}
+	}
 	system("pause");
 	
 	

@@ -20,26 +20,6 @@ int& Serv_network::operator()(const int &index1, const int &index2)
 	return m_graph[index1][index2];
 }
 
-void Serv_network::makeGraph()
-{
-	std::vector<std::pair<int, int>> arcs;
-
-	for (int i = 0; i < m_stops; i++)
-		for (int j = 0; j < m_stops; j++)
-			arcs.push_back(std::make_pair(i, j));
-
-	std::vector<std::pair<int, int>>::iterator it = arcs.begin();
-
-	std::random_shuffle(arcs.begin(), arcs.end());
-
-	int arcno(getRandom(4, 15));
-
-	int index = 0;
-	for (it = arcs.begin(); index < arcno; it++, index++)
-		m_graph[(it->first)][(it->second)] = getRandom(1, 10);
-		
-}
-
 void Serv_network::printGraph()
 {
 	for (int i = 0; i < m_stops; i++)
