@@ -8,6 +8,7 @@
 #include"functions.h"
 #include"Bus.h"
 #include<vector>
+#include<initializer_list>
 
 void printLine(std::ofstream &f, int &h, int &m, int &s)
 {
@@ -27,26 +28,25 @@ void printLine(std::ofstream &f, int &h, int &m, int &s)
 
 int main()
 {
-	Serv_network test(5);
-	test.printGraph();
-	std::cout << "\n";
-	Bus bus;
+	//Serv_network test(6);
+	//test.printGraph();
+	//std::cout << "\n";
+	//Bus bus;
 	//std::ofstream f("test.txt");
-	int tick = 0;
-	int nr_buses(getRandom(1, 5));
+	//int tick = 0;
+	//int nr_buses(4);
 
-	std::vector<Bus> Buses;
-	std::vector<Bus>::iterator Buses it = Buses.begin();
-	for (int i = 0; i < nr_buses; i++)
-		Buses.push_back(Bus());
 
-	while (tick < 7200)
+	/*while (tick < 7200)
 	{
 		for( it; it != Buses.end(); it++)
 		{
-			if()
+			//if()
 		}
-	}
+	*/
+
+	Serv_network test;
+	test.printGraph();
 	system("pause");
 	
 	

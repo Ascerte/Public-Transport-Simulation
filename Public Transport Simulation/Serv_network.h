@@ -1,17 +1,26 @@
 #pragma once
+#include<vector>
+#include<utility>
+#include<initializer_list>
+#include<iostream>
+
+struct Stops
+{
+	int ID; //id of the node
+	std::vector<std::pair<int, int>> vertices;  //we are using a vector of pairs to keep track of the destination node and the weight of the vertex
+
+	Stops(int id, std::initializer_list<std::pair<int, int>> vert);
+	void print();
+	
+};
+
 
 class Serv_network
 {
-	
 public:
-	Serv_network(int stops);
-	~Serv_network();
-	int& operator()(const int &index1, const int &index2);
-	void makeGraph();
+	Serv_network();
 	void printGraph();
-	friend class Bus;
 
-protected:
-	int m_stops = 0;
-	int m_graph[10][10] = { 0 };
+private:
+	std::vector<Stops> m_graph;
 };

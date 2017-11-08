@@ -8,7 +8,7 @@ class Bus
 public:
 	Bus();
 	~Bus();
-	void createCourse(Serv_network &serv);
+	void createCourse();
 
 private:
 	std::vector<int> m_course;
