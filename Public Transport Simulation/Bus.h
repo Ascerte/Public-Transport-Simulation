@@ -2,17 +2,18 @@
 #include<utility>
 #include<vector>
 #include"Serv_network.h"
+#include<initializer_list>
 
 class Bus
 {
 public:
-	Bus();
-	~Bus();
-	void createCourse();
+	Bus(std::initializer_list<int> l);
+	void printCourse();
+	int getPosition();
+	void update();
 
 private:
 	std::vector<int> m_course;
 	std::vector<int>::iterator m_it = m_course.begin();
-	int m_courselen = static_cast<int>(m_course.size());
 };
 

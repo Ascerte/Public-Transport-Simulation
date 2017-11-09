@@ -1,19 +1,29 @@
 #include "Bus.h"
 #include<iostream>
 #include"Serv_network.h"
-#include"functions.h"
 
-Bus::Bus()
+Bus::Bus( std::initializer_list<int> l)
+	:m_course(l)
 {
 
 }
 
-
-Bus::~Bus()
+void Bus::printCourse()
 {
+	for (m_it; m_it != m_course.end(); m_it++)
+		std::cout << *m_it << " ";
 }
 
-void Bus::createCourse()
+int Bus::getPosition()
 {
-	
+	if (m_it != m_course.end())
+		return *m_it;
+}
+
+void Bus::update()
+{
+	if (m_it != m_course.end())
+		m_it++;
+	else
+		return;
 }

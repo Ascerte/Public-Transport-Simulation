@@ -28,25 +28,34 @@ void printLine(std::ofstream &f, int &h, int &m, int &s)
 
 int main()
 {
-	//Serv_network test(6);
-	//test.printGraph();
-	//std::cout << "\n";
-	//Bus bus;
-	//std::ofstream f("test.txt");
-	//int tick = 0;
-	//int nr_buses(4);
 
+	std::vector<Bus> Bus_vec;  //vector of Bus objects
+	Bus_vec.reserve(4);
+	
 
-	/*while (tick < 7200)
+	std::vector<std::initializer_list<int>> bus_list; //vector of initializer lists to initialize the previous Bus objects
+	typedef std::initializer_list<int> li;
+	li list = { 0,1,2,3,5,0 };  //creating an int list for each bus
+	bus_list.reserve(4);
+	bus_list.push_back(list);
+	li list1 = { 0,1,0 };
+	bus_list.push_back(list1);
+	li list2 = { 0,5,4,1,0 };
+	bus_list.push_back(list2);
+	li list3 = { 0,5,3,4,1,0 };
+	bus_list.push_back(list3);
+
+	for (int i = 0; i < 4; i++)
+		Bus_vec.push_back(Bus(bus_list[i]));  //initializing the Bus objects
+
+	std::vector<Bus>::iterator bus_it = Bus_vec.begin();  //iterator for the bus list
+
+	for (bus_it; bus_it != Bus_vec.end(); bus_it++)
 	{
-		for( it; it != Buses.end(); it++)
-		{
-			//if()
-		}
-	*/
+		bus_it->printCourse(); //printing the course of each bus within the vector for testing purposes
+		std::cout << "\n";
+	}
 
-	Serv_network test;
-	test.printGraph();
 	system("pause");
 	
 	
