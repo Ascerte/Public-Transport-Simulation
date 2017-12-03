@@ -10,21 +10,6 @@
 #include<vector>
 #include<initializer_list>
 
-void printLine(std::ofstream &f, int &h, int &m, int &s)
-{
-	f << 0 << h << ":";
-	if (m < 10)
-		f << 0 << m;
-	else
-		f << m;
-	f << ":";
-
-	if (s < 10)
-		f << 0 << s;
-	else
-		f << s;
-	f << "\n";
-}
 
 int main()
 {
