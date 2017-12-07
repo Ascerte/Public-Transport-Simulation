@@ -43,13 +43,43 @@ bool Bus::isFinished()
 	return m_finished;
 }
 
+
+
+void printLine(int &h, int &m, int &s)
+{
+	f << 0 << h << ":";
+	if (m < 10)
+		f << 0 << m;
+	else
+		f << m;
+	f << ":";
+
+	if (s < 10)
+		f << 0 << s;
+	else
+		f << s;
+	f << "\n";
+}
+
 void tickTransform(int &tick)
 {
 	int sec, min, hour;
 	hour = (tick / 60 / 60) % 24;
 	min = (tick / 60) % 60;
 	sec = tick % 60;
-	f << hour << ":" << min << ":" << sec << " -> ";
+	//f << hour << ":" << min << ":" << sec << " -> ";
+	f << 0 << hour << ":";
+	if (min < 10)
+		f << 0 << min;
+	else
+		f << min;
+	f << ":";
+
+	if (sec < 10)
+		f << 0 << sec;
+	else
+		f << sec;
+	f << " -> ";
 }
 
 void Bus::startCourse(int &tick)
