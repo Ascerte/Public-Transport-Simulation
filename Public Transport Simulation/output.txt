@@ -1,0 +1,40 @@
+0:0:0 -> Bus 0 has left station 0
+0:0:0 -> Bus 1 has left station 0
+0:0:0 -> Bus 2 has left station 0
+0:0:0 -> Bus 3 has left station 0
+0:0:1 -> Bus 0 has arrived at station 1
+0:0:1 -> Bus 1 has arrived at station 1
+0:0:1 -> Bus 2 has arrived at station 5
+0:0:1 -> Bus 3 has arrived at station 5
+0:0:2 -> Bus 0 has left station 1
+0:0:2 -> Bus 1 has left station 1
+0:0:2 -> Bus 2 has left station 5
+0:0:2 -> Bus 3 has left station 5
+0:0:3 -> Bus 0 has arrived at station 2
+0:0:3 -> Bus 1 has arrived at station 0
+0:0:3 -> Bus 2 has arrived at station 4
+0:0:3 -> Bus 3 has arrived at station 3
+0:0:4 -> Bus 0 has left station 2
+0:0:4 -> Bus 1 has left station 0
+0:0:4 -> Bus 2 has left station 4
+0:0:4 -> Bus 3 has left station 3
+0:0:5 -> Bus 0 has arrived at station 3
+0:0:5 -> Bus 1 has completed its course 
+0:0:5 -> Bus 2 has arrived at station 1
+0:0:5 -> Bus 3 has arrived at station 4
+0:0:6 -> Bus 0 has left station 3
+0:0:6 -> Bus 2 has left station 1
+0:0:6 -> Bus 3 has left station 4
+0:0:7 -> Bus 0 has arrived at station 5
+0:0:7 -> Bus 2 has arrived at station 0
+0:0:7 -> Bus 3 has arrived at station 1
+0:0:8 -> Bus 0 has left station 5
+0:0:8 -> Bus 2 has left station 0
+0:0:8 -> Bus 3 has left station 1
+0:0:9 -> Bus 0 has arrived at station 0
+0:0:9 -> Bus 2 has completed its course 
+0:0:9 -> Bus 3 has arrived at station 0
+0:0:10 -> Bus 0 has left station 0
+0:0:10 -> Bus 3 has left station 0
+0:0:11 -> Bus 0 has completed its course 
+0:0:11 -> Bus 3 has completed its course 

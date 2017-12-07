@@ -1,9 +1,12 @@
 #include "Bus.h"
 #include<iostream>
 #include"Serv_network.h"
+#include<fstream>
+#include<sstream>
 
-Bus::Bus( std::initializer_list<int> l)
-	:m_course(l)
+std::ofstream f("output.txt");
+Bus::Bus( int busno, std::initializer_list<int> l)
+	:m_course(l), m_id(busno)
 {
 
 }
@@ -14,16 +17,66 @@ void Bus::printCourse()
 		std::cout << *m_it << " ";
 }
 
-int Bus::getPosition()  //returns current position of the bus
+std::vector<int>::iterator Bus::getPosition()  //returns current position of the bus
 {
-	if (m_it != m_course.end())  
-		return *m_it;
+		return m_it;
 }
 
-void Bus::update()  //moves the bus to the next stop in the course
+int Bus::getID()
+{
+	return m_id;
+}
+
+void Bus::reset()
+{
+	m_it = m_course.begin();
+
+}
+
+void Bus::move()
+{
+	m_it++;
+}
+
+bool Bus::isFinished()
+{
+	return m_finished;
+}
+
+void tickTransform(int &tick)
+{
+	int sec, min, hour;
+	hour = (tick / 60 / 60) % 24;
+	min = (tick / 60) % 60;
+	sec = tick % 60;
+	f << hour << ":" << min << ":" << sec << " -> ";
+}
+
+void Bus::startCourse(int &tick)
 {
 	if (m_it != m_course.end())
-		m_it++;
+	{
+		if (m_isRunning == false)
+		{
+			tickTransform(tick);
+			f << "Bus " << m_id << " has left station " << *m_it << "\n";
+			move();
+			m_isRunning = true;
+		}
+		else
+		{
+			tickTransform(tick);
+			f << "Bus " << m_id << " has arrived at station " << *m_it << "\n";
+			m_isRunning = false;
+		}
+	}
+
 	else
-		return;
+	{
+		tickTransform(tick);
+		f << "Bus " << m_id << " has completed its course \n";
+		m_finished = true;
+	}
+
+
 }

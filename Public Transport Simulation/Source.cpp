@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include"Serv_network.h"
-#include<time.h>
 #include"Person.h"
 #include<string>
 #include<random>
@@ -31,16 +30,21 @@ int main()
 	bus_list.push_back(list3);
 
 	for (int i = 0; i < 4; i++)
-		Bus_vec.push_back(Bus(bus_list[i]));  //initializing the Bus objects
+		Bus_vec.push_back(Bus(i,bus_list[i]));  //initializing the Bus objects
 
 	std::vector<Bus>::iterator bus_it = Bus_vec.begin();  //iterator for the bus list
 
-	for (bus_it; bus_it != Bus_vec.end(); bus_it++)
+	int tick = 0;
+	while (tick < 15)
 	{
-		bus_it->printCourse(); //printing the course of each bus within the vector for testing purposes
-		std::cout << "\n";
-	}
+		for (bus_it = Bus_vec.begin(); bus_it != Bus_vec.end(); bus_it++)
+		{
+			if(bus_it->isFinished() == false)
+				bus_it->startCourse(tick);
+		}
 
+		tick++;
+	}
 	system("pause");
 	
 	
