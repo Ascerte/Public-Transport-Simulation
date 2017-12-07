@@ -15,6 +15,7 @@ public:
 	void move();
 	bool isFinished();
 	void startCourse(int &tick);
+	void test();
 
 private:
 	std::vector<int> m_course;

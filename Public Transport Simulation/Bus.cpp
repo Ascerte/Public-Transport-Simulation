@@ -4,6 +4,8 @@
 #include<fstream>
 #include<sstream>
 
+Serv_network tester;
+
 std::ofstream f("output.txt");
 Bus::Bus( int busno, std::initializer_list<int> l)
 	:m_course(l), m_id(busno)
@@ -108,5 +110,9 @@ void Bus::startCourse(int &tick)
 		m_finished = true;
 	}
 
+}
 
+void Bus::test()
+{
+	std::cout << tester.getWeight(*m_it, *(m_it + 1));
 }

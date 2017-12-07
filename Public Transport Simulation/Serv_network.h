@@ -11,6 +11,7 @@ struct Stops
 
 	Stops(int id, std::initializer_list<std::pair<int, int>> vert);
 	void print();
+	int returnWeight(int node);
 	
 };
 
@@ -20,7 +21,7 @@ class Serv_network
 public:
 	Serv_network();
 	void printGraph();
-
+	int getWeight(int currNode, int adjNode);
 private:
 	std::vector<Stops> m_graph;
 };

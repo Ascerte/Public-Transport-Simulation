@@ -21,6 +21,16 @@ void Stops::print()
 
 	}
 }
+
+int Stops::returnWeight(int node)
+{
+	for (std::vector<std::pair<int, int>>::iterator it = vertices.begin(); it != vertices.end(); it++)
+	{
+		if (it->first == node)
+			return it -> second;
+	}
+}
+
 Serv_network::Serv_network()
 {
 	m_graph.push_back(Stops(0, { {1, 3}, {5,4} })); //initialize 6 nodes using the constructor
@@ -40,3 +50,8 @@ void Serv_network::printGraph()
 	}
 }
 
+int Serv_network::getWeight(int currNode, int adjNode)
+{
+	return m_graph[0].returnWeight(adjNode);
+	
+}
