@@ -33,12 +33,12 @@ int Stops::returnWeight(int node)
 
 Serv_network::Serv_network()
 {
-	m_graph.push_back(Stops(0, { {1, 3}, {5,4} })); //initialize 6 nodes using the constructor
-	m_graph.push_back(Stops(1, { {0, 3}, {2,5} }));
-	m_graph.push_back(Stops(2, { {3,2} }));
-	m_graph.push_back(Stops(3, { {4,2}, {5,2} }));
-	m_graph.push_back(Stops(4, { {1,1}, }));
-	m_graph.push_back(Stops(5, { {0,4}, {3,2}, {4,4} }));
+	m_graph.push_back(Stops(0, { {1, 3*60}, {5,4*60} })); //initialize 6 nodes using the constructor
+	m_graph.push_back(Stops(1, { {0, 3*60}, {2,5*60} }));
+	m_graph.push_back(Stops(2, { {3,2*60} }));
+	m_graph.push_back(Stops(3, { {4,2*60}, {5,2*60} }));
+	m_graph.push_back(Stops(4, { {1,1*60}, }));
+	m_graph.push_back(Stops(5, { {0,4*60}, {3,2*60}, {4,4*60} }));
 }
 
 void Serv_network::printGraph()
@@ -52,6 +52,6 @@ void Serv_network::printGraph()
 
 int Serv_network::getWeight(int currNode, int adjNode)
 {
-	return m_graph[0].returnWeight(adjNode);
+	return m_graph[currNode].returnWeight(adjNode);
 	
 }

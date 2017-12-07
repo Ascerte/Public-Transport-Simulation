@@ -23,5 +23,7 @@ private:
 	int m_id;
 	bool m_finished = false;
 	bool m_isRunning = false;
+	int m_arrival;
+	int m_embark = 0;
 };
 

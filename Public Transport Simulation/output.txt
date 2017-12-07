@@ -1,0 +1,40 @@
+00:00:00 -> Bus 0 has left station 0
+00:00:00 -> Bus 1 has left station 0
+00:00:00 -> Bus 2 has left station 0
+00:00:00 -> Bus 3 has left station 0
+00:03:00 -> Bus 0 has arrived at station 1
+00:03:00 -> Bus 1 has arrived at station 1
+00:04:00 -> Bus 0 has left station 1
+00:04:00 -> Bus 1 has left station 1
+00:04:00 -> Bus 2 has arrived at station 5
+00:04:00 -> Bus 3 has arrived at station 5
+00:05:00 -> Bus 2 has left station 5
+00:05:00 -> Bus 3 has left station 5
+00:07:00 -> Bus 1 has arrived at station 0
+00:07:00 -> Bus 3 has arrived at station 3
+00:08:00 -> Bus 1 has left station 0
+00:08:00 -> Bus 3 has left station 3
+00:08:01 -> Bus 1 has completed its course 
+00:09:00 -> Bus 0 has arrived at station 2
+00:09:00 -> Bus 2 has arrived at station 4
+00:10:00 -> Bus 0 has left station 2
+00:10:00 -> Bus 2 has left station 4
+00:10:00 -> Bus 3 has arrived at station 4
+00:11:00 -> Bus 2 has arrived at station 1
+00:11:00 -> Bus 3 has left station 4
+00:12:00 -> Bus 0 has arrived at station 3
+00:12:00 -> Bus 2 has left station 1
+00:12:00 -> Bus 3 has arrived at station 1
+00:13:00 -> Bus 0 has left station 3
+00:13:00 -> Bus 3 has left station 1
+00:15:00 -> Bus 0 has arrived at station 5
+00:15:00 -> Bus 2 has arrived at station 0
+00:16:00 -> Bus 0 has left station 5
+00:16:00 -> Bus 2 has left station 0
+00:16:00 -> Bus 3 has arrived at station 0
+00:16:01 -> Bus 2 has completed its course 
+00:17:00 -> Bus 3 has left station 0
+00:17:01 -> Bus 3 has completed its course 
+00:20:00 -> Bus 0 has arrived at station 0
+00:21:00 -> Bus 0 has left station 0
+00:21:01 -> Bus 0 has completed its course 

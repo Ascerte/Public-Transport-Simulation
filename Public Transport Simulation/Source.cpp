@@ -35,7 +35,7 @@ int main()
 	std::vector<Bus>::iterator bus_it = Bus_vec.begin();  //iterator for the bus list
 
 	int tick = 0;
-	/*while (tick < 15)
+	while (tick < 3600)
 	{
 		for (bus_it = Bus_vec.begin(); bus_it != Bus_vec.end(); bus_it++)
 		{
@@ -44,10 +44,10 @@ int main()
 		}
 
 		tick++;
-	}*/
+	}
 
 	
-	bus_it->test();
+	//bus_it->test();
 	system("pause");
 	
 	

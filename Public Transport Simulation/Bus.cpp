@@ -69,7 +69,6 @@ void tickTransform(int &tick)
 	hour = (tick / 60 / 60) % 24;
 	min = (tick / 60) % 60;
 	sec = tick % 60;
-	//f << hour << ":" << min << ":" << sec << " -> ";
 	f << 0 << hour << ":";
 	if (min < 10)
 		f << 0 << min;
@@ -88,18 +87,23 @@ void Bus::startCourse(int &tick)
 {
 	if (m_it != m_course.end())
 	{
-		if (m_isRunning == false)
+		if (m_isRunning == false && tick == m_embark)
 		{
 			tickTransform(tick);
 			f << "Bus " << m_id << " has left station " << *m_it << "\n";
+			m_arrival = tick + tester.getWeight(*m_it, *(m_it + 1));
 			move();
 			m_isRunning = true;
 		}
 		else
 		{
-			tickTransform(tick);
-			f << "Bus " << m_id << " has arrived at station " << *m_it << "\n";
-			m_isRunning = false;
+			if (tick == m_arrival)
+			{
+				tickTransform(tick);
+				f << "Bus " << m_id << " has arrived at station " << *m_it << "\n";
+				m_isRunning = false;
+				m_embark = tick + 60;
+			}
 		}
 	}
 
