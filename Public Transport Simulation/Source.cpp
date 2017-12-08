@@ -35,19 +35,17 @@ int main()
 	std::vector<Bus>::iterator bus_it = Bus_vec.begin();  //iterator for the bus list
 
 	int tick = 0;
-	while (tick < 3600)
+	while (tick < 3600) //we are using an arbitrary unit of time. 1 tick corresponds to one second 
 	{
 		for (bus_it = Bus_vec.begin(); bus_it != Bus_vec.end(); bus_it++)
 		{
-			if(bus_it->isFinished() == false)
+			if(bus_it->isFinished() == false) // we check if the bus hasn't finished its course so as not to print the same thing multiple times
 				bus_it->startCourse(tick);
 		}
 
 		tick++;
 	}
 
-	
-	//bus_it->test();
 	system("pause");
 	
 	

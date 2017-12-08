@@ -26,8 +26,8 @@ int Stops::returnWeight(int node)
 {
 	for (std::vector<std::pair<int, int>>::iterator it = vertices.begin(); it != vertices.end(); it++)
 	{
-		if (it->first == node)
-			return it -> second;
+		if (it->first == node) //we search all adjacent nodes until we find the node we want and then return it's weight
+			return it -> second; 
 	}
 }
 
@@ -52,6 +52,6 @@ void Serv_network::printGraph()
 
 int Serv_network::getWeight(int currNode, int adjNode)
 {
-	return m_graph[currNode].returnWeight(adjNode);
+	return m_graph[currNode].returnWeight(adjNode); //we call the function from Stops to return the weight between the current node and the next node
 	
 }
