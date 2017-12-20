@@ -1,17 +1,14 @@
-#include<iostream>
-#include<string>
 #pragma once
+#include<iostream>
+
 
 class Person
 {
 public:
-	Person(std::string name);
+	Person();
 	~Person();
-	friend std::ostream& operator<<(std::ostream& out, Person pers)
-	{
-		//out<<
-	}
 
 private:
-	std::string m_name;
+	int m_destination;
+	int m_start;
 };

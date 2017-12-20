@@ -11,10 +11,10 @@ public:
 	void printCourse();
 	std::vector<int>::iterator getPosition();
 	int getID();
-	void reset();
+	void reset(int &tick);
 	void move();
 	bool isFinished();
-	void startCourse(int &tick);
+	void startCourse(int &tick, std::ofstream &f, Serv_network &network);
 
 private:
 	std::vector<int> m_course;

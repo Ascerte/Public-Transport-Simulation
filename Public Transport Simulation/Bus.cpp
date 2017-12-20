@@ -4,9 +4,7 @@
 #include<fstream>
 #include<sstream>
 
-Serv_network tester;
 
-std::ofstream f("output.txt");
 
 Bus::Bus( int busno, std::initializer_list<int> l)
 	:m_course(l), m_id(busno)
@@ -30,9 +28,11 @@ int Bus::getID()
 	return m_id;
 }
 
-void Bus::reset()
+void Bus::reset(int &tick)
 {
 	m_it = m_course.begin();
+	m_finished = false;
+	m_embark = tick;
 
 }
 
@@ -46,7 +46,7 @@ bool Bus::isFinished()
 	return m_finished;
 }
 
-void tickTransform(int &tick)  //function to transform the tick to hh:mm:ss format
+void tickTransform(int &tick, std::ofstream &f)  //function to transform the tick to hh:mm:ss format
 {
 	int sec, min, hour;
 	hour = (tick / 60 / 60) % 24;
@@ -66,15 +66,15 @@ void tickTransform(int &tick)  //function to transform the tick to hh:mm:ss form
 	f << " -> ";
 }
 
-void Bus::startCourse(int &tick)
+void Bus::startCourse(int &tick, std::ofstream &f , Serv_network &network)
 {
 	if (m_it != m_course.end()) //check if the bus had not reached the final stop
 	{
 		if (m_isRunning == false && tick == m_embark) //check if the bus is not running and the current tick is equal to the scheduled departure after waiting the passengers to embark
 		{
-			tickTransform(tick); //print curent tick
+			tickTransform(tick,f); //print curent tick
 			f << "Bus " << m_id << " has left station " << *m_it << "\n";
-			m_arrival = tick + tester.getWeight(*m_it, *(m_it + 1)); //set the scheduled arrival based on the current tick + weight between the current node and destination node
+			m_arrival = tick + network.getWeight(*m_it, *(m_it + 1)); //set the scheduled arrival based on the current tick + weight between the current node and destination node
 			move(); //move the bus to the next stop
 			m_isRunning = true; // the bus is now running
 		}
@@ -82,7 +82,7 @@ void Bus::startCourse(int &tick)
 		{
 			if (tick == m_arrival) //check if the bus is not running and the current tick is equal to the scheduled arrival time after departure
 			{
-				tickTransform(tick);  //print current tick
+				tickTransform(tick,f);  //print current tick
 				f << "Bus " << m_id << " has arrived at station " << *m_it << "\n";
 				m_isRunning = false; //the bus has now stopped
 				m_embark = tick + 60; //departure time after the embarking of passenger stops is calculated as current tick + 1 minute in ticks
@@ -92,9 +92,10 @@ void Bus::startCourse(int &tick)
 
 	else //if the bus has completed its route we print a message then set the m_finished flag to true
 	{
-		tickTransform(tick);
+		tickTransform(tick,f);
 		f << "Bus " << m_id << " has completed its course \n";
 		m_finished = true;
+		reset(tick);
 	}
 
 }
