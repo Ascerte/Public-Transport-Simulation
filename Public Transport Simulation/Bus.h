@@ -2,18 +2,27 @@
 #include<utility>
 #include<vector>
 #include"Serv_network.h"
+#include<initializer_list>
 
-class Serv_network;
 class Bus
 {
 public:
-	Bus();
-	~Bus();
-	void createCourse(Serv_network &serv);
+	Bus(int busno ,std::initializer_list<int> l);
+	void printCourse();
+	std::vector<int>::iterator getPosition();
+	int getID();
+	void reset(int &tick);
+	void move();
+	bool isFinished();
+	void startCourse(int &tick, std::ofstream &f, Serv_network &network);
 
 private:
-	std::vector<std::pair<int, int>> m_course;
-	std::vector<std::pair<int, int>>::iterator m_it = m_course.begin();
-	int m_courselen = static_cast<int>(m_course.size());
+	std::vector<int> m_course;
+	std::vector<int>::iterator m_it = m_course.begin();
+	int m_id;
+	bool m_finished = false;
+	bool m_isRunning = false;
+	int m_arrival;
+	int m_embark = 0;
 };
 

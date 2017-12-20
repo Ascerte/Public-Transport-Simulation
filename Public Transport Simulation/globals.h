@@ -2,4 +2,4 @@
 #include<time.h>
 #include<random>
 
-extern std::mt19937 seed(time(NULL));
+extern std::mt19937 seed(static_cast<int>(time(NULL)));
